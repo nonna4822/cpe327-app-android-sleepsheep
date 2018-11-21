@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sleep sheep</string>
+    <string name="button_sleep">Sleep</string>
+    <string name="press">Press</string>
+    <string name="pick_time">pick time</string>
+    <string name="button_showTime">showTime</string>
+    <string name="sleep_time">Sleep time at</string>
+    <string name="textView_tellUserPress">You have 5 seccond for clicking button press</string>
+</resources>
