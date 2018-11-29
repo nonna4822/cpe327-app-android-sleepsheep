@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private static int day;
     private static int hourOfDay;
     private static int minute;
-    private Date dateUser;
+    private static Date dateUser;
 
     public static void setYear(int year) {
         MainActivity.year = year;
@@ -52,14 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     //if you didn't set this format , sleepSheep will be not respon
 
-    public void setTime(){
-        year = year - 1900;
-        dateUser.setDate(day);
-        dateUser.setMonth(month);
-        dateUser.setYear(year);
-        dateUser.setMinutes(minute);
-        dateUser.setHours(hourOfDay);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +61,19 @@ public class MainActivity extends AppCompatActivity {
         dateUser = new Date();
     }
 
+    public static void setTime(Date date , int year , int month , int day , int minute , int hourOfDay){
+        date.setDate(day);
+        date.setMonth(month);
+        date.setYear(year);
+        date.setMinutes(minute);
+        date.setHours(hourOfDay);
+    }
+
     public void launchPushSheepGame(View view) {
         //set
+        setTime(dateUser , year , month , day , minute , hourOfDay);
         ((MyApplication)this.getApplication()).setAwakingTimeUser(dateUser);
 
-        setTime();
         Intent intent = new Intent(this, pushSheepGame.class);
         startActivity(intent);
     }
