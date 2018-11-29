@@ -7,10 +7,10 @@
     tools:context=".pushSheepGame">
 
     <Button
-        android:onClick="resetSleepTimer"
         android:id="@+id/button_pressSheep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="resetSleepTimer"
         android:text="@string/press"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,4 +28,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_showUserTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/textView_tellPress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

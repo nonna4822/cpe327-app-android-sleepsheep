@@ -3,6 +3,7 @@
     package="com.example.elesr.sleepsheep">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,10 +19,11 @@
         </activity>
         <activity
             android:name=".pushSheepGame"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".showAwakingTime"
-            android:parentActivityName=".pushSheepGame"></activity>
+            android:parentActivityName=".pushSheepGame" />
+        <activity android:name=".ViewReport"></activity>
     </application>
 
 </manifest>

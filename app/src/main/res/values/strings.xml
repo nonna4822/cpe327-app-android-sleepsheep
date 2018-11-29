@@ -6,4 +6,9 @@
     <string name="button_showTime">showTime</string>
     <string name="sleep_time">Sleep time at</string>
     <string name="textView_tellUserPress">You have 5 seccond for clicking button press</string>
+    <string name="pick_date">pick date</string>
+    <string name="approciate_awaking_time">Approciate Awaking Time</string>
+    <string name="user_input_time">User Input Time</string>
+    <string name="duration">duration</string>
+    <string name="see_report">See Report</string>
 </resources>

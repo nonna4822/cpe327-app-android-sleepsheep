@@ -18,6 +18,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class pushSheepGame extends AppCompatActivity {
+    //setting format
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy HH:mm:ss");
 
     //intent message
     public static final String EXTRA_MESSAGE =
@@ -25,12 +27,6 @@ public class pushSheepGame extends AppCompatActivity {
     //timeout to go sleep & handler
     public static final long GOTOSLEEP_TIMEOUT = 3000;
     private Handler goSleepHandler = new Handler();
-
-    //set current time
-    Date date = new Date();
-    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-    String currentDateTimeString = sdf.format(date);
-
 
     public void resetSleepTimer(View view){
         goSleepHandler.removeCallbacks(goToSleep);
@@ -45,10 +41,16 @@ public class pushSheepGame extends AppCompatActivity {
     };
 
     public void lunchShowAwakingTime(){
-        //intent
-        String message = currentDateTimeString;
+        //create new intent
         Intent intent = new Intent(this, showAwakingTime.class);
-        intent.putExtra(EXTRA_MESSAGE, message);
+
+        //get actual sleeping time
+        Date date = new Date();
+        String currentTimeSleep = sdf.format(date);
+
+        //put "actual sleeping time" into intent
+        intent.putExtra("currentTimeSleep", currentTimeSleep);
+
         startActivity(intent);
     }
 
@@ -56,6 +58,11 @@ public class pushSheepGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_sheep_game);
+
+//        test global variable//
+        TextView textView = findViewById(R.id.textView_showUserTime);
+        Date temp = ((MyApplication)this.getApplication()).getAwakingTimeUser();
+        textView.setText(sdf.format(temp));
     }
 
     @Override

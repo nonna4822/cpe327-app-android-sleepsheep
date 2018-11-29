@@ -9,32 +9,52 @@
 
     <Button
         android:id="@+id/button_startSleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="195dp"
+        android:layout_height="115dp"
+        android:layout_marginBottom="212dp"
         android:onClick="launchPushSheepGame"
         android:text="@string/button_sleep"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <TimePicker
-        android:id="@+id/timePicker1"
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="112dp"
+        android:onClick="showTimePickerDialog"
+        android:text="@string/pick_time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_showTime"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginBottom="13dp"
-        android:text="@string/button_showTime"
-        app:layout_constraintBottom_toTopOf="@+id/button_startSleep"
-        app:layout_constraintStart_toStartOf="@+id/button_startSleep" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="163dp"
+        android:onClick="showDatePickerDialog"
+        android:text="@string/pick_date"
+        app:layout_constraintBottom_toTopOf="@+id/button_viewReport"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:onClick="lunchReport"
+        android:id="@+id/button_viewReport"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="142dp"
+        android:text="@string/see_report"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
 </android.support.constraint.ConstraintLayout>
